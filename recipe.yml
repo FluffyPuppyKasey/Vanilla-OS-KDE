@@ -1,8 +1,8 @@
 base: ghcr.io/vanilla-os/desktop:main
-name: Custom Vanilla Desktop
-id: vanilla-custom
+name: Vanilla OS KDE
+id: vanilla-kde
 labels:
-  maintainer: self-maintained
+  maintainer: fluffypuppykasey
 args:
   DEBIAN_FRONTEND: noninteractive
 
@@ -15,21 +15,22 @@ modules:
 
 # Put your custom actions behind this comment
 
-- name: example-packages
+- name: install-packages
   type: apt
   source:
     packages:
-    - vim
-
-- name: example-commands
-  type: shell
-  commands:
-  - echo Example output
+    - task-kde-desktop
+    - breeze-gtk-theme
+    - kde-config-gtk-style
+    - kde-config-gtk-style-preview
+    - plymouth-theme-breeze
+    - kde-config-screenlocker
+    - kde-config-tablet
+    - plasma-workspace-wayland
 
 - name: package-modules
   type: includes
   includes:
-    - modules/50-install-debs
     - modules/80-set-image-abroot-config
 
 # Put your custom actions before this comment
