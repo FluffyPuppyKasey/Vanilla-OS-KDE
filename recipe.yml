@@ -19,13 +19,17 @@ modules:
   type: apt
   source:
     packages:
-    - task-kde-desktop
-    - breeze-gtk-theme
+    - kde-plasma-desktop
+    - ark
+    - plasma-pa
+    - plasma-nm
+    - kde-spectacle
     - kde-config-gtk-style
     - kde-config-gtk-style-preview
-    - plymouth-theme-breeze
     - kde-config-screenlocker
     - kde-config-tablet
+    - breeze-gtk-theme
+    - plymouth-theme-breeze
     - plasma-workspace-wayland
 
 - name: package-modules
